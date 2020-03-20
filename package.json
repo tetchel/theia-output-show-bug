@@ -1,0 +1,45 @@
+{
+	"name": "theia-show-logs",
+	"displayName": "theia-show-logs",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.38.0"
+	},
+	"repository": {
+		"url": "https://github.com/tetchel/theia-output-show-bug"
+	},
+	"publisher": "tetchel",
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.showOutput"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.showOutput",
+				"title": "Show Test Output"
+			},
+			{
+				"command": "extension.hideOutput",
+				"title": "Hide Test Output"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.38.0",
+		"typescript": "^3.7.5"
+	}
+}
